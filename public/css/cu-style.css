@@ -12,10 +12,10 @@ header{
 .header-filler{
     width: 600px;
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
 }
 
-.bg-info{
+.bg-primary{
     background-color: darkblue!important;
 }
 
