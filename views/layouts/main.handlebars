@@ -1,19 +1,39 @@
-<!-- start with form -->
 <head>
     <meta charset="UTF-8">
-    <title>Resume Creator</title>
-     <link rel="stylesheet" href="/resume-creator/templates/style.css">
+    <title>Resume Creator</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    {{#if cindy}}
+        <link rel="stylesheet" href="css/cu-style.css">
+    {{/if}}
+
+    {{#if steven}}
+        <link rel="stylesheet" href="css/sb-style.css">
+    {{/if}}
+
+    {{#if todd}}
+        <link rel="stylesheet" href="css/">
+    {{/if}}
+
+    {{#if camille}}
+        <link rel="stylesheet" href="css/">
+    {{/if}}
+
 </head>
 
 <body>
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
             <h1>
-                Resume
+                Resume Creator
             </h1>
         </header>
         <main class="container container-fluid mt-5">
             {{{ body }}}
         </main>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
 </body>
