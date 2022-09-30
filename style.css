@@ -8,6 +8,7 @@
     font-size: 40px;
     font-family: serif;
     border-bottom: 5px solid #9C98EE;
+    padding: 3px;
     
 }
 
@@ -20,34 +21,58 @@
     display: flex;
     position: absolute;
     right: 0px;
-    top: 36px;
+    top: 39px;
 }
 
 .contact-list {
     list-style: none;
 }
 
+.contact-info {
+    border-bottom: 1px solid gray;
+    margin: 10px 30px 10px 30px;
+}
+
+.education {
+    border-bottom: 1px solid gray;
+    margin: 10px 30px 10px 30px;
+}
+
+.key-skills {
+    margin: 10px 30px 10px 30px;
+}
+
 .link {
     text-decoration: none;
 }
 
-.skill-1 {
-    width: 90%;
-    background-color: #04AA6D;
+.side-content {
+    width: 30%;
+    border-right: 3px #9C98EE solid ;
 }
-.skill-2 {
-    width: 10%;
-    background-color: #2196F3;
-}
-.skill-3 {
-    width: 40%;
-    background-color: #f44336;
-}
-.skill-4 {
-    width: 20%;
-    background-color: #808080;
-}
-.skill-5 {
+
+.experience {
     width: 60%;
-    background-color: #04AA6D;
+    position: absolute;
+    top: 62px;
+    right: 6rem;
+    padding: 5px;
+}
+
+.user-experience {
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+.referrence {
+    width: 60%;
+    position: absolute;
+    top: 10rem;
+    right: 6rem;
+    padding: 5px;
+}
+
+.job-referrence {
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
 }
