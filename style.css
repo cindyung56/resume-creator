@@ -1,0 +1,53 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family:Arial, Helvetica, serif;
+}
+
+.name {
+    font-size: 40px;
+    font-family: serif;
+    border-bottom: 5px solid #9C98EE;
+    
+}
+
+.job {
+    justify-content: center;
+    font-family: serif;
+    background-color: #9C98EE;
+    width: 18rem;
+    color: white;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 36px;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.skill-1 {
+    width: 90%;
+    background-color: #04AA6D;
+}
+.skill-2 {
+    width: 10%;
+    background-color: #2196F3;
+}
+.skill-3 {
+    width: 40%;
+    background-color: #f44336;
+}
+.skill-4 {
+    width: 20%;
+    background-color: #808080;
+}
+.skill-5 {
+    width: 60%;
+    background-color: #04AA6D;
+}
