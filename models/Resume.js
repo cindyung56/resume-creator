@@ -49,9 +49,7 @@ Resume.init(
                 key: 'id',
             }
         },
-
     },
-
     {
         sequelize,
         timestamps: false,
@@ -59,7 +57,6 @@ Resume.init(
         underscored: true,
         modelName: 'resume',
       }
-
 );
 
 module.exports = Resume;
