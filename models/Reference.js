@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Resume extends Model {}
+class Reference extends Model{}
 
-Resume.init(
+Reference.init(
     {
         name: {
             type: DataTypes.STRING,
@@ -12,42 +12,26 @@ Resume.init(
         email: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 isEmail: true,
-            },
+            }
         },
         phone: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 isNumeric: true,
-                len: [7,10],
+                len: [7, 10],
             },
-        },
-        linkedin: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true,
-            },
-        },
-        portfolio: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true,
-            },
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
-            }
+            },
         },
     },
     {
@@ -55,9 +39,9 @@ Resume.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'resume',
+        modelName: 'reference',
       }
-);
 
-module.exports = Resume;
+)
 
+module.exports = Reference;
