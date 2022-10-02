@@ -1,30 +1,29 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Experience extends Model{}
+class Reference extends Model{}
 
-Experience.init(
+Reference.init(
     {
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        company: {
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        start_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
+            unique: true,
             validate: {
-                isDate: true,
-            },
+                isEmail: true,
+            }
         },
-        end_date: {
-            type: DataTypes.DATE,
+        phone: {
+            type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
-                isDate: true,
+                isNumeric: true,
+                len: [7, 10],
             },
         },
         user_id: {
@@ -35,15 +34,14 @@ Experience.init(
             },
         },
     },
-
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'experience',
+        modelName: 'reference',
       }
 
 )
 
-module.exports = Experience;
+module.exports = Reference;
