@@ -16,16 +16,14 @@ Experience.init(
         start_date: {
             type: DataTypes.DATE,
             allowNull: false,
-            validate: {
-                isDate: true,
-            },
         },
         end_date: {
             type: DataTypes.DATE,
-            allowNull: false,
-            validate: {
-                isDate: true,
-            },
+            allowNull: true,
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
