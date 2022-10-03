@@ -40,7 +40,7 @@ Education.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'experience',
+        modelName: 'education',
       }
 
 )
