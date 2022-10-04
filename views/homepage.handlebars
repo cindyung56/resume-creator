@@ -1,53 +1,48 @@
 <!-- start with form -->
 <body>
+<<<<<<< HEAD
+  <header class="title">Resume Creator</header>
+  <div class="homepage-wrapper">
+=======
 <header class="title">Resume
     {{#if loggedIn}}
     <button id="logoutBtn" type="button" class="btn btn-primary">Log out</button>
     {{/if}}
 </header>
 <div class="homepage-wrapper">
+>>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
     <div class="leftside">
-        <div class="contact-input">
-            <div class="picture">
-                <h5>Upload Picture:</h5>
-                <div class="input-group">
-                    <input type="file" class="form-control" id="inputGroupFile04"
-                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
-                </div>
-            </div>
-
-            <div class="name">
-                <h5>Name:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Full Name"
-                    aria-label=".form-control-sm example">
-            </div>
-
-            <div class="email">
-                <h5>Email:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Email"
-                    aria-label=".form-control-sm example">
-            </div>
-
-            <div class="phone-number">
-                <h5>Phone Number:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Phone Number"
-                    aria-label=".form-control-sm example">
-            </div>
-
-            <div class="linkedin">
-                <h5>LinkedIn:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
-                    aria-label=".form-control-sm example">
-            </div>
-
-            <div class="portfolio">
-                <h5>Portfolio:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
-                    aria-label=".form-control-sm example">
-            </div>
+      <div class="contact-input">
+        <div class="picture">
+          <h5>Upload Picture:</h5>
+          <div class="input-group">
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile04"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="inputGroupFileAddon04"
+            >Upload</button>
+          </div>
         </div>
 
+<<<<<<< HEAD
+        <!-- GENERAL INFO -->
+        <div class="name">
+          <h5>Name:</h5>
+          <input
+            id="resumeName"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Full Name"
+            aria-label=".form-control-sm example"
+          />
+=======
         <div class="name">
             <h5>Name:</h5>
             <input class="form-control form-control-sm" type="text" placeholder="Full Name"
@@ -76,86 +71,250 @@
             <h5>Portfolio:</h5>
             <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
                 aria-label=".form-control-sm example">
+>>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
         </div>
 
-    <div class="main-resume">
-        <div class="container-1">
+        <div class="email">
+          <h5>Email:</h5>
+          <input
+            id="resumeEmail"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Email"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+
+        <div class="phone-number">
+          <h5>Phone Number:</h5>
+          <input
+            id="resumePhone"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Phone Number"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+
+        <div class="linkedin">
+          <h5>LinkedIn:</h5>
+          <input
+            id="linkedinLink"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="LinkedIn URL"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+
+        <div class="portfolio">
+          <h5>Portfolio:</h5>
+          <input
+            id="portfolioLink"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Portfolio URL"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+
+        <div class="current-job">
+          <h5>Current Job Title:</h5>
+          <input
+            id="jobTitle"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Current Job Title"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="main-resume">
+          <div class="container-1">
             <div class="experience">
-            <label for="exampleFormControlTextarea1" class="form-label">Experience:</label>
-            <div class="job-titles">
+              <div class="mb-3 experienceSection">
+                <label
+                  for="exampleFormControlTextarea1"
+                  class="form-label"
+                >Experience:</label>
                 <h5>Job Title</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Job Title"
-                aria-label=".form-control-sm example">
-            </div>
+                <input
+                  class="form-control form-control-sm job-titles"
+                  type="text"
+                  placeholder="Job Title"
+                  aria-label=".form-control-sm example"
+                />
 
-            <div class="company">
                 <h5>Company Name</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Company Name"
-                aria-label=".form-control-sm example"></div>
+                <input
+                  class="form-control form-control-sm company"
+                  type="text"
+                  placeholder="Company Name"
+                  aria-label=".form-control-sm example"
+                />
 
-            <div class="start-date">
                 <h5>Start Date</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Start Date"
-                aria-label=".form-control-sm example">
-            </div>
+                <input
+                  class="form-control form-control-sm start-date"
+                  type="text"
+                  placeholder="Start Date"
+                  aria-label=".form-control-sm example"
+                />
 
-            <div class="end-date">
                 <h5>End Date</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="End Date or Current"
-                aria-label=".form-control-sm example">
+                <input
+                  class="form-control form-control-sm end-date"
+                  type="text"
+                  placeholder="End Date or Current"
+                  aria-label=".form-control-sm example"
+                />
+
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  placeholder="Description"
+                ></textarea>
+              </div>
             </div>
-            <div class="description">
-            <div class="mb-3">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Description</textarea>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-</div>
         <div class="add">
-                <button id="addExperienceBtn" type="button" class="btn btn-primary">Add +</button>
-            </div>
-
-    <div class="container-2">
-        <div class="education">
-        <label for="exampleFormControlTextarea1" class="form-label">Education:</label>
-        <div class="school-name">
-            <h5>School Name</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="School Name"
-                aria-label=".form-control-sm example">
+          <button
+            id="addExperienceBtn"
+            type="button"
+            class="btn btn-primary"
+          >Add +</button>
         </div>
 
-        <div class="school-start">
-            <h5>Start Date</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Start Date"
-                aria-label=".form-control-sm example">
-        </div>
+        <!-- EDUCATION -->
+        <div class="container-2">
+          <div class="education">
+            <div class="mb-3 educationSection">
+              <label
+                for="exampleFormControlTextarea1"
+                class="form-label"
+              >Education:</label>
 
-        <div class="school-end">
-            <h5>End Date</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="End Date"
-                aria-label=".form-control-sm example">
-        </div>
-        
-        <div class="degree">
-            <h5>Type Of Degree</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Degree"
-                aria-label=".form-control-sm example">
-                 </div>
-            </div>
-        </div>
-            <div class="add">
-                <button id="addEducationBtn" type="button" class="btn btn-primary">Add +</button>
-            </div>
+              <h5>School Name</h5>
+              <input
+                class="form-control form-control-sm school-name"
+                type="text"
+                placeholder="School Name"
+                aria-label=".form-control-sm example"
+              />
 
-    {{!-- <div class="container-1">
-        <div class="projects">
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <h5>Start Date</h5>
+              <input
+                class="form-control form-control-sm school-start"
+                type="text"
+                placeholder="Start Date"
+                aria-label=".form-control-sm example"
+              />
+
+              <h5>End Date</h5>
+              <input
+                class="form-control form-control-sm school-end"
+                type="text"
+                placeholder="End Date"
+                aria-label=".form-control-sm example"
+              />
+
+              <h5>Type Of Degree</h5>
+              <input
+                class="form-control form-control-sm degree"
+                type="text"
+                placeholder="Degree"
+                aria-label=".form-control-sm example"
+              />
             </div>
+          </div>
         </div>
+        <div class="add">
+          <button id="addEducationBtn" type="button" class="btn btn-primary">Add
+            +</button>
+        </div>
+      </div>
+
+
+      <!-- REFERENCES -->
+      <div class="references">
+        <label
+          for="exampleFormControlTextarea1"
+          class="form-label"
+        >References:</label>
+        <div class="mb-3 referenceSection">
+          <h5>Name:</h5>
+          <input
+            class="form-control form-control-sm referenceName"
+            type="text"
+            placeholder="Reference Name"
+            aria-label=".form-control-sm example"
+          />
+          <h5>Email:</h5>
+          <input
+            class="form-control form-control-sm referenceEmail"
+            type="text"
+            placeholder="Reference Email"
+            aria-label=".form-control-sm example"
+          />
+          <h5>Phone Number:</h5>
+          <input
+            class="form-control form-control-sm referencePhone"
+            type="text"
+            placeholder="Reference Phone #"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+      </div>
+      <div class="add">
+        <button id="addReferencesBtn" type="button" class="btn btn-primary">Add
+          +</button>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills">
+        <label
+          for="exampleFormControlTextarea1"
+          class="form-label"
+        >Skills:</label>
+        <div class="mb-3">
+          <input
+            class="form-control form-control-sm skill"
+            type="text"
+            placeholder="Skill"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+      </div>
+      <div class="add">
+        <button id="addSkillsBtn" type="button" class="btn btn-primary">Add +</button>
+      </div>
+
     </div>
+<<<<<<< HEAD
+
+    <!-- STICKY -->
+    <div class="rightSide">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <button class="nav-link" aria-current="page" id="temp1">Template 1</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp2">Template 2</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp3">Template 3</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp4">Template 4</button>
+        </li>
+      </ul>
+=======
     <div class="add">
                 <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
             </div>
@@ -235,22 +394,34 @@
             </li>
         </ul>
         
+>>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
 
-        <div class="images-container"> 
-            <!--  -->
-        
-        </div>
+      <div class="images-container">
+        <!--  -->
+
+      </div>
     </div>
+<<<<<<< HEAD
+    <!--make it in here 
+=======
     
 
 
 
         <!--make it in here 
+>>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
 display partial
 add event listener css display block/none 
 
 -->
 
+<<<<<<< HEAD
+  </div>
+  <div class="text-center">
+    <button class="bg-primary text-white p-1" id="createButton">Create Resume</button>
+  </div>
+</body>
+=======
 
 
     </div>
@@ -259,3 +430,4 @@ add event listener css display block/none
 </body>
     
 </div>
+>>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255

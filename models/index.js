@@ -17,45 +17,45 @@ Resume.belongsTo(User, {
 
 // ----------------------------------
 
-User.hasMany(Experience, {
+Resume.hasMany(Experience, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
-Experience.belongsTo(User, {
+Experience.belongsTo(Resume, {
     foreignKey: 'user_id',
 });
 
 // ----------------------------------
 
-User.hasMany(Education, {
+Resume.hasMany(Education, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
-Education.belongsTo(User, {
+Education.belongsTo(Resume, {
     foreignKey: 'user_id',
 });
 
 // ----------------------------------
 
-User.hasMany(Reference, {
+Resume.hasMany(Reference, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
-Reference.belongsTo(User, {
+Reference.belongsTo(Resume, {
     foreignKey: 'user_id',
 });
 
 // ----------------------------------
 
-User.hasMany(Skill, {
+Resume.hasMany(Skill, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
-Skill.belongsTo(User, {
+Skill.belongsTo(Resume, {
     foreignKey: 'user_id',
 });
 
