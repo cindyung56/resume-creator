@@ -27,12 +27,57 @@ addBtn.on("click", function () {
         $("<label>")
           .attr("for", `experienceText${count}`)
           .addClass("form-label")
-          .text("Experience")
+          .text("Experience:")
+      )
+      .append(
+        $("<h5>")
+          .text("Job Title")
+      )
+      .append(
+        $('<input>')
+          .addClass('form-control')
+          .attr('type' , 'text')
+          .attr('placeholder' , 'Job Title')
+          .attr('id' , `experienceText${count}`)
+      )
+      .append(
+        $("<h5>")
+          .text("Company Name")
+      )
+      .append(
+        $('<input>')
+          .addClass('form-control')
+          .attr('type' , 'text')
+          .attr('placeholder' , 'Company Name')
+          .attr('id' , `experienceText${count}`)
+      )
+      .append(
+        $("<h5>")
+          .text("Start Date")
+      )
+      .append(
+        $('<input>')
+          .addClass('form-control')
+          .attr('type' , 'text')
+          .attr('placeholder' , 'Start Date')
+          .attr('id' , `experienceText${count}`)
+      )
+      .append(
+        $("<h5>")
+          .text("End Date")
+      )
+      .append(
+        $('<input>')
+          .addClass('form-control')
+          .attr('type' , 'text')
+          .attr('placeholder' , 'End Date or Current')
+          .attr('id' , `experienceText${count}`)
       )
       .append(
         $("<textarea>")
           .addClass("form-control")
           .attr("rows", "3")
+          .attr('placeholder' , 'Description')
           .attr("id", `experienceText${count}`)
       )
   );
@@ -49,38 +94,55 @@ educationBtn.on("click", function () {
           $("<label>")
             .attr("for", `educationText${count}`)
             .addClass("form-label")
-            .text("Education")
+            .text("Education:")
         )
         .append(
-          $("<textarea>")
-            .addClass("form-control")
-            .attr("rows", "3")
-            .attr("id", `educationText${count}`)
+          $("<h5>")
+            .text("School Name")
+        )
+        .append(
+          $('<input>')
+            .addClass('form-control')
+            .attr('type' , 'text')
+            .attr('placeholder' , 'School Name')
+            .attr('id' , `educationText${count}`)
+        )
+        .append(
+          $("<h5>")
+            .text("Start Date")
+        )
+        .append(
+          $('<input>')
+            .addClass('form-control')
+            .attr('type' , 'text')
+            .attr('placeholder' , 'Start Date')
+            .attr('id' , `educationText${count}`)
+        )
+        .append(
+          $("<h5>")
+            .text("End Date")
+        )
+        .append(
+          $('<input>')
+            .addClass('form-control')
+            .attr('type' , 'text')
+            .attr('placeholder' , 'End Date')
+            .attr('id' , `educationText${count}`)
+        )
+        .append(
+          $("<h5>")
+            .text("Degree")
+        )
+        .append(
+          $('<input>')
+            .addClass('form-control')
+            .attr('type' , 'text')
+            .attr('placeholder' , 'Degree')
+            .attr('id' , `educationText${count}`)
         )
     );
     count++;
   });
-
-projectsBtn.on("click", function () {
-  // console.log("it clicks");
-  projects.append(
-    $("<div>")
-      .addClass("mb-3")
-      .append(
-        $("<label>")
-          .attr("for", `projectsText${count}`)
-          .addClass("form-label")
-          .text("Projects")
-      )
-      .append(
-        $("<textarea>")
-          .addClass("form-control")
-          .attr("rows", "3")
-          .attr("id", `projectsText${count}`)
-      )
-  );
-  count++;
-});
 
 referencesBtn.on("click", function () {
   references.append(
@@ -138,13 +200,26 @@ skillsBtn.on('click', function(){
   )
 });
 
-
-
-
-
-
-
-// this section is my section camille :D
+  // projectsBtn.on("click", function () {
+  //   console.log("it clicks");
+  //   projects.append(
+  //     $("<div>")
+  //       .addClass("mb-3")
+  //       .append(
+  //         $("<label>")
+  //           .attr("for", `projectsText${count}`)
+  //           .addClass("form-label")
+  //           .text("Projects")
+  //       )
+  //       .append(
+  //         $("<textarea>")
+  //           .addClass("form-control")
+  //           .attr("rows", "3")
+  //           .attr("id", `projectsText${count}`)
+  //       )
+  //   );
+  //   count++;
+  // });
 
 
 const templateUrls = [
