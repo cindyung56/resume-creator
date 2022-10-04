@@ -30,7 +30,13 @@ router.get('/todd', async (req, res) => {
 
 // Create GET request to login if not logged in already; redirect to homepage or profile if not logged in
 // could make it so that we have code that checks if they have an existing resume?
-
+router.get('/login', (req, res) => {
+    if (req.session.logged_in){
+        res.redirect('/');
+        return;
+    }
+    // res.render('login');   // currently don't have a login page
+})
 
 
 module.exports = router;
