@@ -17,15 +17,16 @@ h5 {
 
 label {
     margin: 10px;
+    font-size: 20px;
 }
 
 .form-control {
-    width: 50%;
+    width: 80%;
     margin: 10px;
 }
 
 .input-group {
-    width: 30%;
+    width: 80%;
 }
 
 button {
@@ -35,4 +36,23 @@ button {
 footer {
     text-align: center;
     font-size: 14px;
+}
+
+.homepage-wrapper {
+    display: flex;
+}
+
+.leftside {
+    width: 60%;
+    flex: 1 0 60%;
+}
+
+.rightSide {
+    width: 40%;
+    flex: 1 0 40%;
+}
+
+img {
+    width: 400px;
+    height: 500px;
 }
