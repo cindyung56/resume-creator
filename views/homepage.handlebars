@@ -15,66 +15,41 @@
 
             <div class="name">
                 <h5>Name:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Full Name"
+                <input id="resumeName" class="form-control form-control-sm" type="text" placeholder="Full Name"
                     aria-label=".form-control-sm example">
             </div>
 
             <div class="email">
                 <h5>Email:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Email"
+                <input id="resumeEmail" class="form-control form-control-sm" type="text" placeholder="Email"
                     aria-label=".form-control-sm example">
             </div>
 
             <div class="phone-number">
                 <h5>Phone Number:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Phone Number"
+                <input id="resumePhone" class="form-control form-control-sm" type="text" placeholder="Phone Number"
                     aria-label=".form-control-sm example">
             </div>
 
             <div class="linkedin">
                 <h5>LinkedIn:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
+                <input id="linkedinLink" class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
                     aria-label=".form-control-sm example">
             </div>
 
             <div class="portfolio">
                 <h5>Portfolio:</h5>
-                <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
+                <input id="portfolioLink" class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
                     aria-label=".form-control-sm example">
             </div>
-        </div>
 
-<<<<<<< Updated upstream
-        <div class="name">
-            <h5>Name:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Full Name"
-                aria-label=".form-control-sm example">
-        </div>
+            <div class="current-job">
+                <h5>Current Job Title:</h5>
+                <input id="jobTitle" class="form-control form-control-sm" type="text" placeholder="Current Job Title"
+                    aria-label=".form-control-sm example">
+            </div>
 
-        <div class="email">
-            <h5>Email:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Email"
-                aria-label=".form-control-sm example">
         </div>
-
-        <div class="phone-number">
-            <h5>Phone Number:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Phone Number"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="linkedin">
-            <h5>LinkedIn:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="portfolio">
-            <h5>Portfolio:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
-                aria-label=".form-control-sm example">
-        </div>
-    </div>
 
     <div class="main-resume">
         <div class="container-1">
@@ -112,51 +87,36 @@
     <div class="add">
                 <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
             </div>
-=======
-        <div class="main-resume">
-            <div class="experience">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Experience</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
 
-            <div class="education">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Education</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
-
-            <div class="projects">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
->>>>>>> Stashed changes
-
+            <!-- REFERENCES -->
             <div class="references">
+                <h5>References</h5>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">References</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <h5>Name:</h5>
+                    <input class="form-control form-control-sm referenceName" type="text" placeholder="Reference Name"
+                        aria-label=".form-control-sm example">
+                    <h5>Email:</h5>
+                    <input class="form-control form-control-sm referenceEmail" type="text" placeholder="Reference Email"
+                        aria-label=".form-control-sm example">
+                    <h5>Phone Number:</h5>
+                    <input class="form-control form-control-sm referencePhone" type="text" placeholder="Reference Phone #"
+                        aria-label=".form-control-sm example">
                 </div>
             </div>
+            <div class="add">
+                <button id="addReferencesBtn" type="button" class="btn btn-primary">Add +</button>
+            </div>
 
-            <div class="Skills">
+            <!-- SKILLS -->
+            <div class="skills">
+                <h5>Skills</h5>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Skills</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <input class="form-control form-control-sm skill" type="text" placeholder="Skill"
+                    aria-label=".form-control-sm example">
                 </div>
+            </div>
+            <div class="add">
+                <button id="addSkillsBtn" type="button" class="btn btn-primary">Add +</button>
             </div>
         </div>
     </div>
@@ -200,11 +160,11 @@ add event listener css display block/none
 
 
 
-<<<<<<< Updated upstream
-    </div>
-</div>
-</body>
-=======
     
 </div>
->>>>>>> Stashed changes
+
+<div class="text-center">
+    <button class="bg-primary text-white p-1" id="createButton">Create Resume</button>
+</div>
+
+</body>
