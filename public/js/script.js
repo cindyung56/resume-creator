@@ -49,23 +49,23 @@ educationBtn.on("click", function () {
     count++;
   });
 
-  projectsBtn.on("click", function () {
-    console.log("it clicks");
-    projects.append(
-      $("<div>")
-        .addClass("mb-3")
-        .append(
-          $("<label>")
-            .attr("for", `projectsText${count}`)
-            .addClass("form-label")
-            .text("Projects")
-        )
-        .append(
-          $("<textarea>")
-            .addClass("form-control")
-            .attr("rows", "3")
-            .attr("id", `projectsText${count}`)
-        )
-    );
-    count++;
-  });
+  // projectsBtn.on("click", function () {
+  //   console.log("it clicks");
+  //   projects.append(
+  //     $("<div>")
+  //       .addClass("mb-3")
+  //       .append(
+  //         $("<label>")
+  //           .attr("for", `projectsText${count}`)
+  //           .addClass("form-label")
+  //           .text("Projects")
+  //       )
+  //       .append(
+  //         $("<textarea>")
+  //           .addClass("form-control")
+  //           .attr("rows", "3")
+  //           .attr("id", `projectsText${count}`)
+  //       )
+  //   );
+  //   count++;
+  // });
