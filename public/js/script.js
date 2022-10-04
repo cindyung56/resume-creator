@@ -1,28 +1,24 @@
+// VARIABLES
 const addBtn = $("#addExperienceBtn");
 const educationBtn = $("#addEducationBtn");
-const projectsBtn = $('#addProjectsBtn');
 const referencesBtn = $('#addReferencesBtn');
 const skillsBtn = $('#addSkillsBtn');
 const uploadBtn = $(".btn");
 
 const experience = $(".experience");
 const education = $(".education");
-const projects = $(".projects");
 const references = $(".references");
 const skills = $(".skills");
 
-const tempDis1 = $("#temp1");
-const templateC = $('#cindys-template');
 let count = 1;
 const createButton = $("#createButton");
 
-
-
+// EVENT LISTENERS
 addBtn.on("click", function () {
   // console.log("it clicks");
   experience.append(
     $("<div>")
-      .addClass("mb-3")
+      .addClass("mb-3 experienceSection")
       .append(
         $("<label>")
           .attr("for", `experienceText${count}`)
@@ -89,7 +85,7 @@ educationBtn.on("click", function () {
     // console.log("it clicks");
     education.append(
       $("<div>")
-        .addClass("mb-3")
+        .addClass("mb-3 educationSection")
         .append(
           $("<label>")
             .attr("for", `educationText${count}`)
@@ -147,7 +143,7 @@ educationBtn.on("click", function () {
 referencesBtn.on("click", function () {
   references.append(
     $('<div>')
-      .addClass("mb-3")
+      .attr("class", "mb-3 referenceSection")
       .append(
         $("<h5>").text("Name:")
       )
@@ -200,26 +196,6 @@ skillsBtn.on('click', function(){
   )
 });
 
-  // projectsBtn.on("click", function () {
-  //   console.log("it clicks");
-  //   projects.append(
-  //     $("<div>")
-  //       .addClass("mb-3")
-  //       .append(
-  //         $("<label>")
-  //           .attr("for", `projectsText${count}`)
-  //           .addClass("form-label")
-  //           .text("Projects")
-  //       )
-  //       .append(
-  //         $("<textarea>")
-  //           .addClass("form-control")
-  //           .attr("rows", "3")
-  //           .attr("id", `projectsText${count}`)
-  //       )
-  //   );
-  //   count++;
-  // });
 
 
 const templateUrls = [
@@ -268,13 +244,42 @@ createButton.on('click', function (){
 
 
   let experienceArray = [];
+  for (let i = 0; i < $('.experienceSection').length; i++){
+    const oneExpList = $($('.experienceSection')[i]).children('input');
+
+    const description = $($('.experienceSection')[i]).children('textarea');
+
+    experienceArray.push({
+      "title": $(oneExpList[0]).val(),
+      "company": $(oneExpList[1]).val(),
+      "start_date": $(oneExpList[2]).val(),
+      "end_date": $(oneExpList[3]).val(),
+      "description": description.val(),
+    });
+  }
 
 
   let educationArray = [];
+  for (let i = 0; i < $('.educationSection').length; i++){
+    const oneEduList = $($('.educationSection')[i]).children('input');
+    educationArray.push({
+      "name": $(oneEduList[0]).val(),
+      "start_date": $(oneEduList[1]).val(),
+      "end_date": $(oneEduList[2]).val(),
+      "degree": $(oneEduList[3]).val(),
+    });
+  }
 
 
   let referencesArray = [];
-  
+  for (let i = 0; i < $('.referenceSection').length; i++){
+    const oneRefList = $($('.referenceSection')[i]).children('input');
+    referencesArray.push({
+      "name": $(oneRefList[0]).val(),
+      "email": $(oneRefList[1]).val(),
+      "phone": $(oneRefList[2]).val()
+    });
+  }
 
 
   let skillArray = [];
@@ -284,14 +289,18 @@ createButton.on('click', function (){
   }
 
   const body = {
-    resumeObject, 
-    experienceArray, 
-    educationArray, 
-    referencesArray, 
-    skillArray
+    'resume': resumeObject, 
+    "experience": experienceArray, 
+    "education": educationArray, 
+    "reference": referencesArray, 
+    "skill": skillArray,
   };
+  
+  console.log(body);
 
   // send fetch or ajax request here
+  // send body to back-end to make new data in database
+  // send body to render in whichever template has been chosen
 
 
 });

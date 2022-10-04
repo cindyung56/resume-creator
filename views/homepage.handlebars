@@ -93,56 +93,49 @@
         <div class="main-resume">
           <div class="container-1">
             <div class="experience">
-              <label
-                for="exampleFormControlTextarea1"
-                class="form-label"
-              >Experience:</label>
-              <div class="job-titles">
+              <div class="mb-3 experienceSection">
+                <label
+                  for="exampleFormControlTextarea1"
+                  class="form-label"
+                >Experience:</label>
                 <h5>Job Title</h5>
                 <input
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm job-titles"
                   type="text"
                   placeholder="Job Title"
                   aria-label=".form-control-sm example"
                 />
-              </div>
 
-              <div class="company">
                 <h5>Company Name</h5>
                 <input
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm company"
                   type="text"
                   placeholder="Company Name"
                   aria-label=".form-control-sm example"
-                /></div>
+                />
 
-              <div class="start-date">
                 <h5>Start Date</h5>
                 <input
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm start-date"
                   type="text"
                   placeholder="Start Date"
                   aria-label=".form-control-sm example"
                 />
-              </div>
 
-              <div class="end-date">
                 <h5>End Date</h5>
                 <input
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm end-date"
                   type="text"
                   placeholder="End Date or Current"
                   aria-label=".form-control-sm example"
                 />
-              </div>
-              <div class="description">
-                <div class="mb-3">
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="3"
-                  >Description</textarea>
-                </div>
+
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  placeholder="Description"
+                ></textarea>
               </div>
             </div>
           </div>
@@ -158,44 +151,39 @@
         <!-- EDUCATION -->
         <div class="container-2">
           <div class="education">
-            <label
-              for="exampleFormControlTextarea1"
-              class="form-label"
-            >Education:</label>
-            <div class="school-name">
+            <div class="mb-3 educationSection">
+              <label
+                for="exampleFormControlTextarea1"
+                class="form-label"
+              >Education:</label>
+
               <h5>School Name</h5>
               <input
-                class="form-control form-control-sm"
+                class="form-control form-control-sm school-name"
                 type="text"
                 placeholder="School Name"
                 aria-label=".form-control-sm example"
               />
-            </div>
 
-            <div class="school-start">
               <h5>Start Date</h5>
               <input
-                class="form-control form-control-sm"
+                class="form-control form-control-sm school-start"
                 type="text"
                 placeholder="Start Date"
                 aria-label=".form-control-sm example"
               />
-            </div>
 
-            <div class="school-end">
               <h5>End Date</h5>
               <input
-                class="form-control form-control-sm"
+                class="form-control form-control-sm school-end"
                 type="text"
                 placeholder="End Date"
                 aria-label=".form-control-sm example"
               />
-            </div>
 
-            <div class="degree">
               <h5>Type Of Degree</h5>
               <input
-                class="form-control form-control-sm"
+                class="form-control form-control-sm degree"
                 type="text"
                 placeholder="Degree"
                 aria-label=".form-control-sm example"
@@ -209,25 +197,14 @@
         </div>
       </div>
 
-      {{! <div class="container-1">
-        <div class="projects">
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="add">
-                <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
-            </div> }}
 
       <!-- REFERENCES -->
       <div class="references">
         <label
-              for="exampleFormControlTextarea1"
-              class="form-label"
-            >References:</label>
-        <div class="mb-3">
+          for="exampleFormControlTextarea1"
+          class="form-label"
+        >References:</label>
+        <div class="mb-3 referenceSection">
           <h5>Name:</h5>
           <input
             class="form-control form-control-sm referenceName"
@@ -259,9 +236,9 @@
       <!-- SKILLS -->
       <div class="skills">
         <label
-              for="exampleFormControlTextarea1"
-              class="form-label"
-            >Skills:</label>
+          for="exampleFormControlTextarea1"
+          class="form-label"
+        >Skills:</label>
         <div class="mb-3">
           <input
             class="form-control form-control-sm skill"
