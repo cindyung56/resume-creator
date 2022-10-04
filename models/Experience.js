@@ -22,7 +22,7 @@ Experience.init(
             allowNull: true,
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
         },
         user_id: {

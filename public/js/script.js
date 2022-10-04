@@ -12,6 +12,8 @@ const skills = $(".skills");
 
 let count = 1;
 const createButton = $("#createButton");
+let selectedTemplate = null;
+let loggedInUserId = null;
 
 // EVENT LISTENERS
 addBtn.on("click", function () {
@@ -201,15 +203,18 @@ skillsBtn.on('click', function(){
 const templateUrls = [
   {
     id: "temp1",
-    url: "images/cy-resume-template.png"
+    url: "images/cy-resume-template.png",
+    layout: "camille"
   },
   {
     id: "temp2",
-    url: "images/sb-resume-template.png"
+    url: "images/sb-resume-template.png",
+    layout: "steven"
   },
   {
     id: "temp3",
-    url: "images/cu-resume-template.jpg"
+    url: "images/cu-resume-template.jpg",
+    layout: "cindy"
   }
 ]
 //grab images-container with queryselector.all 
@@ -224,6 +229,7 @@ $('ul').on("click", "button", (e) => {
     const activeTemplateUrl = templateUrls.filter(template => {
       return template.id === e.target.id
     })
+    selectedTemplate = activeTemplateUrl.layout;
     imagesContainer.empty()
     imagesContainer.append($('<img>').attr('src', activeTemplateUrl[0].url 
     ))
@@ -301,6 +307,9 @@ createButton.on('click', function (){
   // send fetch or ajax request here
   // send body to back-end to make new data in database
   // send body to render in whichever template has been chosen
+
+  document.location.replace(`/resume/${selectedTemplate}/`)
+
 
 
 });
