@@ -320,6 +320,7 @@ createButton.on('click', function (){
   .catch(err => console.log(err))
   
 });
+
 const logout = async () => {
   const response = await fetch('api/users/logout', {
     method: 'DELETE',

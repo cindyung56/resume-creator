@@ -1,12 +1,5 @@
 const router = require("express").Router();
-const {
-  User,
-  Resume,
-  Experience,
-  Education,
-  Reference,
-  Skill,
-} = require("../models");
+const { User, Resume, Experience, Education, Reference, Skill,} = require("../models");
 // may need authentication here?
 
 router.get('/', async (req, res) => {
