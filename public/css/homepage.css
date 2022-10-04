@@ -20,12 +20,12 @@ label {
 }
 
 .form-control {
-    width: 50%;
+    width: 60%;
     margin: 10px;
 }
 
 .input-group {
-    width: 30%;
+    width: 60%;
 }
 
 button {
@@ -35,4 +35,18 @@ button {
 footer {
     text-align: center;
     font-size: 14px;
+}
+
+.homepage-wrapper {
+    display: flex;
+}
+
+.leftside {
+    width: 60%;
+    flex: 1 0 60%;
+}
+
+.rightSide {
+    width: 40%;
+    flex: 1 0 40%;
 }
