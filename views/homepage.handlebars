@@ -1,16 +1,12 @@
 <!-- start with form -->
+{{#if loggedIn}}
 <body>
-<<<<<<< HEAD
-  <header class="title">Resume Creator</header>
-  <div class="homepage-wrapper">
-=======
 <header class="title">Resume
     {{#if loggedIn}}
     <button id="logoutBtn" type="button" class="btn btn-primary">Log out</button>
     {{/if}}
 </header>
 <div class="homepage-wrapper">
->>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
     <div class="leftside">
       <div class="contact-input">
         <div class="picture">
@@ -31,7 +27,6 @@
           </div>
         </div>
 
-<<<<<<< HEAD
         <!-- GENERAL INFO -->
         <div class="name">
           <h5>Name:</h5>
@@ -42,36 +37,6 @@
             placeholder="Full Name"
             aria-label=".form-control-sm example"
           />
-=======
-        <div class="name">
-            <h5>Name:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Full Name"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="email">
-            <h5>Email:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Email"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="phone-number">
-            <h5>Phone Number:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Phone Number"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="linkedin">
-            <h5>LinkedIn:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
-                aria-label=".form-control-sm example">
-        </div>
-
-        <div class="portfolio">
-            <h5>Portfolio:</h5>
-            <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
-                aria-label=".form-control-sm example">
->>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
         </div>
 
         <div class="email">
@@ -293,7 +258,6 @@
       </div>
 
     </div>
-<<<<<<< HEAD
 
     <!-- STICKY -->
     <div class="rightSide">
@@ -314,120 +278,24 @@
           <button class="nav-link" id="temp4">Template 4</button>
         </li>
       </ul>
-=======
-    <div class="add">
-                <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
-            </div>
-
-        <div class="main-resume">
-            <div class="experience">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Experience</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
-
-            <div class="education">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Education</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
-
-            <div class="projects">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="add">
-                    <button type="button" class="btn btn-primary">Add +</button>
-                </div>
-            </div>
-
-
-            </div> --}}
-
-
-            <div class="references">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">References</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </div>
-
-            <div class="Skills">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Skills</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-</div>
-
-
-    <!-- STICKY -->
-    <div class="rightSide">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <button class="nav-link" aria-current="page" id="temp1">Resume 1</button>
-            </li>
-
-            <li class="nav-item">
-                <button class="nav-link" id="temp2">Resume 2</button>
-            </li>
-
-            <li class="nav-item">
-                <button class="nav-link" id="temp3">Resume 3</button>
-            </li>
-
-            <li class="nav-item">
-                <button class="nav-link" id="temp4">Resume 4</button>
-            </li>
-        </ul>
-        
->>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
 
       <div class="images-container">
         <!--  -->
 
       </div>
     </div>
-<<<<<<< HEAD
     <!--make it in here 
-=======
-    
-
-
-
-        <!--make it in here 
->>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
 display partial
 add event listener css display block/none 
 
 -->
 
-<<<<<<< HEAD
   </div>
   <div class="text-center">
     <button class="bg-primary text-white p-1" id="createButton">Create Resume</button>
   </div>
 </body>
-=======
 
-
-    </div>
-</body>
-    
-</body>
-    
-</div>
->>>>>>> 7928a6d65f013185953bc3e5134dbfe69d0f8255
+{{else}}
+  <button id="loginButton">Log In</button>
+{{/if}}
