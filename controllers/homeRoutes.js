@@ -4,7 +4,8 @@ const { User, Resume, Experience, Education, Reference, Skill,} = require("../mo
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
-      loggedIn: req.session.logged_in
+      loggedIn: req.session.logged_in,
+      homepage: true,
     })
 });
 

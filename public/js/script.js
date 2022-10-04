@@ -11,11 +11,19 @@ const references = $(".references");
 const skills = $(".skills");
 
 let count = 1;
+const loginButton = $('#loginButton');
 const createButton = $("#createButton");
 let selectedTemplate = null;
 let loggedInUserId = null;
 
 // EVENT LISTENERS
+
+loginButton.on('click', function(){
+  console.log("button pressed");
+  document.location.replace('/login');
+})
+
+
 addBtn.on("click", function () {
   // console.log("it clicks");
   experience.append(
@@ -229,7 +237,7 @@ $('ul').on("click", "button", (e) => {
     const activeTemplateUrl = templateUrls.filter(template => {
       return template.id === e.target.id
     })
-    selectedTemplate = activeTemplateUrl.layout;
+    selectedTemplate = activeTemplateUrl[0].layout;
     imagesContainer.empty()
     imagesContainer.append($('<img>').attr('src', activeTemplateUrl[0].url 
     ))
@@ -311,6 +319,7 @@ createButton.on('click', function (){
   {
     method: 'POST',
     body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
   })
   .then((data) => {
     if(data.ok){
@@ -320,6 +329,9 @@ createButton.on('click', function (){
   .catch(err => console.log(err))
   
 });
+
+
+
 
 const logout = async () => {
   const response = await fetch('api/users/logout', {
@@ -338,6 +350,7 @@ if(document.location.pathname !== '/login') {
   document.querySelector('#logoutBtn').addEventListener('click', logout);
 }
 
-
-// keep track of user
-//select resume / through button 
+// $('#loginButton').on('click', function(){
+//   console.log("button pressed");
+//   document.location.replace('/login');
+// })
