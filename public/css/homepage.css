@@ -20,12 +20,12 @@ label {
 }
 
 .form-control {
-    width: 60%;
+    width: 80%;
     margin: 10px;
 }
 
 .input-group {
-    width: 60%;
+    width: 80%;
 }
 
 button {
@@ -49,4 +49,9 @@ footer {
 .rightSide {
     width: 40%;
     flex: 1 0 40%;
+}
+
+img {
+    width: 400px;
+    height: 500px;
 }
