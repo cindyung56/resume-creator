@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Resume, Experience, Education, Reference, Skill } = require('../../models');
 
 // POST (create) new Resume based on body; use the other models to store information
-// for now assume the body is an object that separates all the information for the models
+// for now assume the body is an object that separates all the information for the models; everything except the resume will be an array of objects
 router.post('/', async(req, res) => {
     try{
      const resumeData = await Resume.create({
@@ -10,56 +10,85 @@ router.post('/', async(req, res) => {
         user_id: req.session.user_id,
      });
      
-     (req.body.experience).forEach((element) => {
+     const experienceData = req.body.experience;
+     (experienceData).forEach((element) => {
         Experience.create({
             ...element,
             user_id: req.session.user_id,
         })
      });
 
-     (req.body.education).forEach((element) => {
+     const educationData = req.body.education;
+     (educationData).forEach((element) => {
         Education.create({
             ...element,
             user_id: req.session.user_id,
         })
      });
 
-     (req.body.reference).forEach((element) => {
+     const referenceData = req.body.reference;
+     (referenceData).forEach((element) => {
         Reference.create({
             ...element,
             user_id: req.session.user_id,
         })
      });
 
-     (req.body.skill).forEach((element) => {
+     const skillData = req.body.skill;
+     (skillData).forEach((element) => {
         Skill.create({
             ...element,
             user_id: req.session.user_id,
         })
      });
 
-     res.status(200).json(resumeData);
+     res.status(200).json({
+        resumeData, 
+        experienceData, 
+        educationData, 
+        referenceData, 
+        skillData,
+     });
 
     } catch (err){
         res.status(500).json(err);
     }
 });
 
-// PUT (update) Resume with new information if submitted again (idk how this is going to work for now but would be a good idea to let them update their info)
-router.put('/', async(req, res) => {
-
-});
-
 
 // DELETE Resume based on req.session.user_id
-// TODO(?): I don't think we need to delete the other information since it wouldn't be user friendly to have them input all that information again
 router.delete('/', async (req, res) => {
     try{
         const resumeData = await Resume.destroy({
             where: {
                 user_id: req.session.user_id,
-            },
+            }
         });
+
+		Skill.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Reference.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Education.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Experience.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
 
         if(!resumeData){
             res.status(400).json({message: "Could not delete resume."});
