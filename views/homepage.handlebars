@@ -1,6 +1,10 @@
 <!-- start with form -->
 <body>
-<header class="title">Resume Creator</header>
+<header class="title">Resume
+    {{#if loggedIn}}
+    <button id="logoutBtn" type="button" class="btn btn-primary">Log out</button>
+    {{/if}}
+</header>
 <div class="homepage-wrapper">
     <div class="leftside">
         <div class="contact-input">
@@ -44,6 +48,35 @@
             </div>
         </div>
 
+        <div class="name">
+            <h5>Name:</h5>
+            <input class="form-control form-control-sm" type="text" placeholder="Full Name"
+                aria-label=".form-control-sm example">
+        </div>
+
+        <div class="email">
+            <h5>Email:</h5>
+            <input class="form-control form-control-sm" type="text" placeholder="Email"
+                aria-label=".form-control-sm example">
+        </div>
+
+        <div class="phone-number">
+            <h5>Phone Number:</h5>
+            <input class="form-control form-control-sm" type="text" placeholder="Phone Number"
+                aria-label=".form-control-sm example">
+        </div>
+
+        <div class="linkedin">
+            <h5>LinkedIn:</h5>
+            <input class="form-control form-control-sm" type="text" placeholder="LinkedIn URL"
+                aria-label=".form-control-sm example">
+        </div>
+
+        <div class="portfolio">
+            <h5>Portfolio:</h5>
+            <input class="form-control form-control-sm" type="text" placeholder="Portfolio URL"
+                aria-label=".form-control-sm example">
+        </div>
 
     <div class="main-resume">
         <div class="container-1">
@@ -125,7 +158,42 @@
     </div>
     <div class="add">
                 <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
+            </div>
+
+        <div class="main-resume">
+            <div class="experience">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Experience</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="add">
+                    <button type="button" class="btn btn-primary">Add +</button>
+                </div>
+            </div>
+
+            <div class="education">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Education</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="add">
+                    <button type="button" class="btn btn-primary">Add +</button>
+                </div>
+            </div>
+
+            <div class="projects">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="add">
+                    <button type="button" class="btn btn-primary">Add +</button>
+                </div>
+            </div>
+
+
             </div> --}}
+
 
             <div class="references">
                 <div class="mb-3">
@@ -140,6 +208,10 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
+
 </div>
 
 
@@ -147,19 +219,19 @@
     <div class="rightSide">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <button class="nav-link" aria-current="page" id="temp1">Template 1</button>
+                <button class="nav-link" aria-current="page" id="temp1">Resume 1</button>
             </li>
 
             <li class="nav-item">
-                <button class="nav-link" id="temp2">Template 2</button>
+                <button class="nav-link" id="temp2">Resume 2</button>
             </li>
 
             <li class="nav-item">
-                <button class="nav-link" id="temp3">Template 3</button>
+                <button class="nav-link" id="temp3">Resume 3</button>
             </li>
 
             <li class="nav-item">
-                <button class="nav-link" id="temp4">Template 4</button>
+                <button class="nav-link" id="temp4">Resume 4</button>
             </li>
         </ul>
         
@@ -169,6 +241,7 @@
         
         </div>
     </div>
+    
 
 
 
@@ -177,6 +250,12 @@ display partial
 add event listener css display block/none 
 
 -->
+
+
+
+    </div>
+</body>
+    
 </body>
     
 </div>

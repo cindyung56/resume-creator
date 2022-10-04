@@ -5,8 +5,6 @@ const uploadBtn = $(".btn");
 const experience = $(".experience");
 const education = $(".education");
 const projects = $(".projects");
-const tempDis1 = $("#temp1");
-const templateC = $('#cindys-template');
 let count = 1;
 
 addBtn.on("click", function () {
@@ -192,3 +190,23 @@ $('ul').on("click", "button", (e) => {
   } 
 )
 
+const logout = async () => {
+  const response = await fetch('api/users/logout', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/login');
+  } else {
+    alert('Failed to log out.');
+  }
+};
+
+if(document.location.pathname !== '/login') {
+  document.querySelector('#logoutBtn').addEventListener('click', logout);
+}
+
+
+// keep track of user
+//select resume / through button 
