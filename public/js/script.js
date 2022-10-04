@@ -5,6 +5,8 @@ const uploadBtn = $(".btn");
 const experience = $(".experience");
 const education = $(".education");
 const projects = $(".projects");
+const tempDis1 = $("#temp1");
+const templateC = $('#cindys-template');
 let count = 1;
 
 addBtn.on("click", function () {
@@ -27,6 +29,7 @@ addBtn.on("click", function () {
   );
   count++;
 });
+
 
 educationBtn.on("click", function () {
     console.log("it clicks");
@@ -69,3 +72,40 @@ educationBtn.on("click", function () {
     );
     count++;
   });
+
+// this section is my section camille :D
+
+
+const templateUrls = [
+  {
+    id: "temp1",
+    url: "images/cy-resume-template.png"
+  },
+  {
+    id: "temp2",
+    url: "images/sb-resume-template.png"
+  },
+  {
+    id: "temp3",
+    url: "images/cu-resume-template.jpg"
+  }
+]
+//grab images-container with queryselector.all 
+// add event listener to the ul 
+// if event . taget = li, then 
+// images-container.filter 
+// if the event . taret . = "id" match then select display
+const imagesContainer= $('.images-container')
+
+$('ul').on("click", "button", (e) => {
+ 
+    const activeTemplateUrl = templateUrls.filter(template => {
+      return template.id === e.target.id
+    })
+    imagesContainer.empty()
+    imagesContainer.append($('<img>').attr('src', activeTemplateUrl[0].url 
+    ))
+    // create image tag with jquest and add src attr with template.url
+  } 
+)
+
