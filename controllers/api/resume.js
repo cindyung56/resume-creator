@@ -55,100 +55,6 @@ router.post('/', async(req, res) => {
     }
 });
 
-// PUT (update) Resume with new information if submitted again (idk how this is going to work for now but would be a good idea to let them update their info)
-// TODO: how does the program know to update the specific information........ we would have to use IDs?
-// router.put('/', async(req, res) => {
-//     try{
-//         let experienceData = false;
-//         let educationData = false;
-//         let referenceData = false;
-//         let skillData = false;
-
-
-//         const resumeData = await Resume.update({
-//             ...req.body.resume,
-//             where: {
-//                 user_id: req.session.user_id,
-//             }
-//         });
-
-//         // (req.body.experience).forEach((element) => {
-//         //     const updatedData = Experience.update({
-//         //         ...element,
-//         //         where: {
-//         //             id: req.body.experience.id, // subject to change
-//         //         },
-//         //     });
-//         //     if (updatedData){
-//         //         experienceData = true;
-//         //     }
-//         //  });
-
-//          for (let i = 0; i < req.body.experience.length; i++){
-//             const updatedData = Experience.update({
-//                 ...req.body.experience[i],
-//                 where: {
-//                     id: i + 1,
-//                 },
-//             });
-//             if(updatedData){
-//                 experienceData = true;
-//             }
-//          }
-
-//         //  (req.body.education).forEach((element) => {
-//         //     const updatedData = Education.update({
-//         //         ...element,
-//         //         where: {
-//         //             id: req.body.experience.id, // subject to change
-//         //         },
-//         //     });
-//         //     if (updatedData){
-//         //         educationData = true;
-//         //     }
-//         //  });
-
-//         //  (req.body.reference).forEach((element) => {
-//         //     const updatedData = Reference.update({
-//         //         ...element,
-//         //         where: {
-//         //             id: req.body.experience.id, // subject to change
-//         //         },
-//         //     });
-//         //     if (updatedData){
-//         //         referenceData = true;
-//         //     }
-//         //  });
-
-//         //  (req.body.skill).forEach((element) => {
-//         //     const updatedData = Skill.update({
-//         //         ...element,
-//         //         where: {
-//         //             id: req.body.experience.id, // subject to change
-//         //         },
-//         //     });
-//         //     if (updatedData){
-//         //         skillData = true;
-//         //     }
-//         //  });
-
-//          if (resumeData || experienceData || educationData || referenceData || skillData){
-//             res.status(200).json({
-//                 resumeData,
-//                 experienceData,
-//                 educationData,
-//                 referenceData,
-//                 skillData
-//             });
-//          } else{
-//             res.status(400).json("Could not update data.");
-//          }
-        
-//     } catch(err){
-//         res.status(500).json(err);
-//     }
-// });
-
 
 // DELETE Resume based on req.session.user_id
 router.delete('/', async (req, res) => {
@@ -159,6 +65,29 @@ router.delete('/', async (req, res) => {
             }
         });
 
+		Skill.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Reference.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Education.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
+
+		Experience.destroy({
+			where: {
+				user_id: req.session.user_id,
+			}
+		});
 
 
         if(!resumeData){
