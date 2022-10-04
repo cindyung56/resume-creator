@@ -1,5 +1,5 @@
 <!-- start with form -->
-
+<body>
 <header class="title">Resume Creator</header>
 <div class="homepage-wrapper">
     <div class="leftside">
@@ -45,35 +45,41 @@
     </div>
 
     <div class="main-resume">
+        <div class="container-1">
         <div class="experience">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Experience</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <div class="add">
-                <button type="button" class="btn btn-primary">Add +</button>
-            </div>
         </div>
+        </div>
+        <div class="add">
+                <button id="addExperienceBtn" type="button" class="btn btn-primary">Add +</button>
+            </div>
 
+    <div class="container-2">
         <div class="education">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Education</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <div class="add">
-                <button type="button" class="btn btn-primary">Add +</button>
-            </div>
         </div>
+    </div>
+<div class="add">
+                <button id="addEducationBtn" type="button" class="btn btn-primary">Add +</button>
+            </div>
 
+    <div class="container-1">
         <div class="projects">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <div class="add">
-                <button type="button" class="btn btn-primary">Add +</button>
-            </div>
         </div>
+    </div>
+    <div class="add">
+                <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
+            </div>
 
         <div class="references">
             <div class="mb-3">
@@ -119,3 +125,4 @@ add event listener css display block/none
 
     </div>
 </div>
+</body>
