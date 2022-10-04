@@ -22,6 +22,7 @@
           </div>
         </div>
 
+        <!-- GENERAL INFO -->
         <div class="name">
           <h5>Name:</h5>
           <input
@@ -88,6 +89,7 @@
           />
         </div>
 
+        <!-- EXPERIENCE -->
         <div class="main-resume">
           <div class="container-1">
             <div class="experience">
@@ -153,6 +155,7 @@
           >Add +</button>
         </div>
 
+        <!-- EDUCATION -->
         <div class="container-2">
           <div class="education">
             <label
@@ -204,33 +207,9 @@
           <button id="addEducationBtn" type="button" class="btn btn-primary">Add
             +</button>
         </div>
-
-        <div class="school-end">
-          <h5>End Date</h5>
-          <input
-            class="form-control form-control-sm"
-            type="text"
-            placeholder="End Date"
-            aria-label=".form-control-sm example"
-          />
-        </div>
-
-        <div class="degree">
-          <h5>Type Of Degree</h5>
-          <input
-            class="form-control form-control-sm"
-            type="text"
-            placeholder="Degree"
-            aria-label=".form-control-sm example"
-          />
-        </div>
       </div>
-    </div>
-    <div class="add">
-      <button id="addEducationBtn" type="button" class="btn btn-primary">Add +</button>
-    </div>
 
-    {{! <div class="container-1">
+      {{! <div class="container-1">
         <div class="projects">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Projects</label>
@@ -242,88 +221,95 @@
                 <button id="addProjectsBtn" type="button" class="btn btn-primary">Add +</button>
             </div> }}
 
-    <!-- REFERENCES -->
-    <div class="references">
-      <h5>References</h5>
-      <div class="mb-3">
-        <h5>Name:</h5>
-        <input
-          class="form-control form-control-sm referenceName"
-          type="text"
-          placeholder="Reference Name"
-          aria-label=".form-control-sm example"
-        />
-        <h5>Email:</h5>
-        <input
-          class="form-control form-control-sm referenceEmail"
-          type="text"
-          placeholder="Reference Email"
-          aria-label=".form-control-sm example"
-        />
-        <h5>Phone Number:</h5>
-        <input
-          class="form-control form-control-sm referencePhone"
-          type="text"
-          placeholder="Reference Phone #"
-          aria-label=".form-control-sm example"
-        />
+      <!-- REFERENCES -->
+      <div class="references">
+        <label
+              for="exampleFormControlTextarea1"
+              class="form-label"
+            >References:</label>
+        <div class="mb-3">
+          <h5>Name:</h5>
+          <input
+            class="form-control form-control-sm referenceName"
+            type="text"
+            placeholder="Reference Name"
+            aria-label=".form-control-sm example"
+          />
+          <h5>Email:</h5>
+          <input
+            class="form-control form-control-sm referenceEmail"
+            type="text"
+            placeholder="Reference Email"
+            aria-label=".form-control-sm example"
+          />
+          <h5>Phone Number:</h5>
+          <input
+            class="form-control form-control-sm referencePhone"
+            type="text"
+            placeholder="Reference Phone #"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+      </div>
+      <div class="add">
+        <button id="addReferencesBtn" type="button" class="btn btn-primary">Add
+          +</button>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills">
+        <label
+              for="exampleFormControlTextarea1"
+              class="form-label"
+            >Skills:</label>
+        <div class="mb-3">
+          <input
+            class="form-control form-control-sm skill"
+            type="text"
+            placeholder="Skill"
+            aria-label=".form-control-sm example"
+          />
+        </div>
+      </div>
+      <div class="add">
+        <button id="addSkillsBtn" type="button" class="btn btn-primary">Add +</button>
+      </div>
+
+    </div>
+
+    <!-- STICKY -->
+    <div class="rightSide">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <button class="nav-link" aria-current="page" id="temp1">Template 1</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp2">Template 2</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp3">Template 3</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="temp4">Template 4</button>
+        </li>
+      </ul>
+
+      <div class="images-container">
+        <!--  -->
+
       </div>
     </div>
-    <div class="add">
-      <button id="addReferencesBtn" type="button" class="btn btn-primary">Add +</button>
-    </div>
-
-    <!-- SKILLS -->
-    <div class="skills">
-      <h5>Skills</h5>
-      <div class="mb-3">
-        <input
-          class="form-control form-control-sm skill"
-          type="text"
-          placeholder="Skill"
-          aria-label=".form-control-sm example"
-        />
-      </div>
-    </div>
-    <div class="add">
-      <button id="addSkillsBtn" type="button" class="btn btn-primary">Add +</button>
-    </div>
-  </div>
-
-  <!-- STICKY -->
-  <div class="rightSide">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <button class="nav-link" aria-current="page" id="temp1">Template 1</button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" id="temp2">Template 2</button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" id="temp3">Template 3</button>
-      </li>
-
-      <li class="nav-item">
-        <button class="nav-link" id="temp4">Template 4</button>
-      </li>
-    </ul>
-
-    <div class="images-container">
-      <!--  -->
-
-    </div>
-  </div>
-
-  <!--make it in here 
+    <!--make it in here 
 display partial
 add event listener css display block/none 
 
 -->
 
+  </div>
   <div class="text-center">
     <button class="bg-primary text-white p-1" id="createButton">Create Resume</button>
   </div>
-
 </body>

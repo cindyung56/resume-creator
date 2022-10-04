@@ -266,8 +266,12 @@ createButton.on('click', function (){
     "title": $('#jobTitle').val(),
   };
 
+
   let experienceArray = [];
+
+
   let educationArray = [];
+
 
   let referencesArray = [];
   
@@ -279,7 +283,13 @@ createButton.on('click', function (){
     skillArray.push({"name": skillInput});
   }
 
-  const body = {resumeObject, skillArray};
+  const body = {
+    resumeObject, 
+    experienceArray, 
+    educationArray, 
+    referencesArray, 
+    skillArray
+  };
 
   // send fetch or ajax request here
 
