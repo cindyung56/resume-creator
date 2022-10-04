@@ -320,3 +320,23 @@ createButton.on('click', function (){
   .catch(err => console.log(err))
   
 });
+const logout = async () => {
+  const response = await fetch('api/users/logout', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/login');
+  } else {
+    alert('Failed to log out.');
+  }
+};
+
+if(document.location.pathname !== '/login') {
+  document.querySelector('#logoutBtn').addEventListener('click', logout);
+}
+
+
+// keep track of user
+//select resume / through button 

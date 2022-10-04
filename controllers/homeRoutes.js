@@ -9,8 +9,10 @@ const {
 } = require("../models");
 // may need authentication here?
 
-router.get("/", async (req, res) => {
-  res.render("homepage");
+router.get('/', async (req, res) => {
+    res.render('homepage', {
+      loggedIn: req.session.logged_in
+    })
 });
 
 
@@ -47,12 +49,24 @@ router.get("/resume/:layout", async (req, res) => {
 
 // Create GET request to login if not logged in already; redirect to homepage or profile if not logged in
 // could make it so that we have code that checks if they have an existing resume?
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/");
-    return;
-  }
-  // res.render('login');   // currently don't have a login page
-});
+router.get('/login', (req, res) => {
+    if (req.session.logged_in){
+        res.redirect('/');
+        return;
+    }
+    res.render('login', {login: true});   
+})
+
+router.post('/logout', (req, res) => {
+    // When the user logs out, destroy the session
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+
 
 module.exports = router;
