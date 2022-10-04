@@ -295,11 +295,11 @@ createButton.on('click', function (){
   }
 
   const body = {
-    'resume': resumeObject, 
-    "experience": experienceArray, 
-    "education": educationArray, 
-    "reference": referencesArray, 
-    "skill": skillArray,
+    resume: resumeObject, 
+    experience: experienceArray, 
+    education: educationArray, 
+    reference: referencesArray, 
+    skill: skillArray,
   };
   
   console.log(body);
@@ -307,9 +307,16 @@ createButton.on('click', function (){
   // send fetch or ajax request here
   // send body to back-end to make new data in database
   // send body to render in whichever template has been chosen
-
-  document.location.replace(`/resume/${selectedTemplate}/`)
-
-
-
+  fetch('/api/resume',
+  {
+    method: 'POST',
+    body: JSON.stringify(body),
+  })
+  .then((data) => {
+    if(data.ok){
+      document.location.replace(`/resume/${selectedTemplate}`);
+    }
+  })
+  .catch(err => console.log(err))
+  
 });

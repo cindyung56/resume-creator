@@ -15,9 +15,9 @@ router.get("/", async (req, res) => {
 
 
 // Routes to GET chosen template
-router.get("/resume/:layout/:user_id", async (req, res) => {
+router.get("/resume/:layout", async (req, res) => {
   const resumeData = await Resume.findOne({
-    where: { user_id: req.params.user_id },
+    where: { user_id: req.session.user_id },
     include: [Experience, Education, Reference, Skill],
   });
 
