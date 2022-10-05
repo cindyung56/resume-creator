@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Resume, Experience, Education, Reference, Skill,} = require("../models");
-const path = require('path');
-const puppeteer = require('puppeteer-core');
+// const path = require('path');
+// const puppeteer = require('puppeteer-core');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
@@ -63,17 +63,17 @@ router.post('/logout', (req, res) => {
   });
 
 
-router.post('/download', async (req, res) => {
+// router.post('/download', async (req, res) => {
 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto(path.join(__dirname, `/resume/${req.body.layout}`), {
-    waitUntil: 'networkidle2',
-  });
-  await page.pdf({path: 'example.pdf', format: 'a4'});
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   await page.goto(path.join(__dirname, `/resume/${req.body.layout}`), {
+//     waitUntil: 'networkidle2',
+//   });
+//   await page.pdf({path: 'example.pdf', format: 'a4'});
 
-  await browser.close();
-})
+//   await browser.close();
+// })
 
 
 module.exports = router;
