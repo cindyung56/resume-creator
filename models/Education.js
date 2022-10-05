@@ -10,18 +10,12 @@ Education.init(
             allowNull: false,
         },
         start_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isDate: true,
-            },
         },
         end_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isDate: true,
-            },
         },
         degree: {
             type: DataTypes.STRING,
