@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Resume, Experience, Education, Reference, Skill,} = require("../models");
-const path = require('path');
-const puppeteer = require('puppeteer-core');
+// const path = require('path');
+// const puppeteer = require('puppeteer-core');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
