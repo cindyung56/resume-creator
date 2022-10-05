@@ -14,11 +14,11 @@ Experience.init(
             allowNull: false,
         },
         start_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         end_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         description: {
