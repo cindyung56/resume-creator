@@ -6,18 +6,17 @@
         <div class="resume-header">
           <div class="row align-items-center">
             <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-              <h2 class="resume-name mb-0 text-uppercase">YOUR NAME HERE</h2>
-              <div class="resume-tagline mb-3 mb-md-0">Fullstack Software Engineer</div>
+              <h2 class="resume-name mb-0 text-uppercase">{{name}}</h2>
+              <div class="resume-tagline mb-3 mb-md-0">{{title}}</div>
             </div>
             <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
               <ul class="list-unstyled mb-0">
                 <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg me-2"></i><a class="resume-link"
-                    href="#">Github</a></li>
+                    href="#">{{portfolio}}</a></li>
                 <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg me-2"></i><a class="resume-link"
-                    href="#">Portfolio</a></li>
+                    href="#">{{email}}</a></li>
                 <li class="mb-2"><i class="fas fa-globe fa-fw fa-lg me-2"></i><a class="resume-link"
-                    href="#">LinkedIn</a></li>
-                <li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg me-2"></i>Your City</li>
+                    href="#">{{linkedin}}</a></li>
               </ul>
             </div>
           </div>
@@ -30,18 +29,15 @@
             </div>
 
             <div class="col text-start">
-              <p class="mb-0">Summarise your career here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores nesciunt vero iusto eum tempore, <br>
-                  rerum deserunt? Corrupti tempore ut sapiente odit consequuntur enim neque! Asperiores ad porro nisi praesentium quibusdam..
-                 </p>
             </div>
-     
+
           </div>
         </div>
-        
+
         <hr>
         <div class="resume-body">
           <div class="row">
-            <div class="resume-main col-12 col-lg-8 col-xl-9   pe-0   pe-lg-5">
+            {{!-- <div class="resume-main col-12 col-lg-8 col-xl-9   pe-0   pe-lg-5">
               <section class="work-section py-3">
                 <h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
                 <div class="item mb-3">
@@ -63,7 +59,7 @@
                     </ul>
                   </div>
                 </div>
-                
+
                 <div class="item mb-3">
                   <div class="item-heading row align-items-center mb-2">
                     <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Lead Software Developer</h4>
@@ -136,25 +132,23 @@
                       ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p>
                   </div>
                 </div>
-                <!--//item-->
+                <!--//item--> --}}
 
               </section>
               <!--//work-section-->
 
 
-              <section class="project-section py-3">
-                <h3 class="text-uppercase resume-section-heading mb-4">Work Experience</h3>
+              <section class="project-section py-3">{{#each experiences as |job|}}
+                <h3 class="text-uppercase resume-section-heading mb-4">Experience</h3>
                 <div class="item mb-3">
                   <div class="item-heading row align-items-center mb-2">
-                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Lorem Ipsum</h4>
-                      <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Google | 2019 -
+                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"> {{job.title}}</h4>
+                    <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">{{job.company}} |
+                      {{job.start_date}} -
                       Present</div>
                   </div>
                   <div class="item-content">
-                    <p>You can use this section for your side projects. You can provide a
-                        project link here as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                      commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                      montes, nascetur ridiculus mus.</p>
+                    <p>{{job.description}}</p>
 
 
                   </div>
@@ -162,75 +156,58 @@
                 <!--//item-->
                 <div class="item">
                   <div class="item-heading row align-items-center mb-2">
-                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Sed Fringilla</h4>
-                      <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Google | 2019 -
-                      Present</div>
+                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">{{job.title}}</h4>
+                    <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">{{job.company}} |
+                      {{job.start_date}} -
+                      {{job.end_date}}</div>
                   </div>
                   <div class="item-content">
-                    <p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi.
-                      Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
-                      enim.</p>
+                    <p>{{job.description}}</p>
 
                   </div>
                 </div>
-                <!--//item-->
-                <div class="item">
-                  <div class="item-heading row align-items-center mb-2">
-                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Praesent </h4>
-                      <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Google | 2019 -
-                      Present</div>
-                  </div>
-                  <div class="item-content">
-                    <p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi.
-                      Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
-                      enim.</p>
 
-                  </div>
-                </div>
-                <!--//item-->
-              </section>
-              <!--//project-section-->
+                {{/each}}
             </div>
-            <!--//resume-main-->
-            <aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-              <section class="skills-section py-3">
-                <h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
-                <div class="item">
-                  <h4 class="item-title">Technical</h4>
-                  <ul class="list-unstyled resume-skills-list">
-                    <li class="mb-2">JavaScript</li>
-                    <li class="mb-2">CSS
-                    <li>
-                    <li class="mb-2">Node</li>
-                    <li class="mb-2">MySQL</li>
-                    <li class="mb-2">Object-oriented design</li>
-                    <li class="mb-2">Design and implement database structures</li>
-                    <li>Lead and deliver complex software systems</li>
-                  </ul>
-                </div>
-              </section>
-              <!--//skills-section-->
-              <section class="education-section py-3">
-                <h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
-                <ul class="list-unstyled resume-education-list">
-                  <li class="mb-3">
-                    <div class="resume-degree font-weight-bold">Your Degree</div>
-                    <div class="resume-degree-org text-muted">Your School </div>
-                    <div class="resume-degree-time text-muted">School Year</div>
-                  </li>
-                  <li>
-                    <div class="resume-degree font-weight-bold">Your Degree</div>
-                    <div class="resume-degree-org text-muted">Your School</div>
-                    <div class="resume-degree-time text-muted">School Year</div>
-                  </li>
-                </ul>
-              </section>
-            </aside>
           </div>
+          <!--//item-->
+          </section>
+          <!--//project-section-->
         </div>
-      </article>
+        <!--//resume-main-->
+        <aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+          <section class="skills-section py-3">
+            <h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
+            <div class="item">
+              <h4 class="item-title">Technical</h4>
+              <ul class="list-unstyled resume-skills-list">
+                <li class="mb-2">{{#each skills as |skill|}}
+                <li>{{skill.name}}</li>
+                {{/each}}
+                </li>
 
+              </ul>
+            </div>
+          </section>
+          <!--//skills-section-->
+          <section class="education-section py-3">{{#each education as |school|}}
+            <h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
+            <ul class="list-unstyled resume-education-list">
+              <li class="mb-3">
+                <div class="resume-degree font-weight-bold">{{school.degree}}e</div>
+                <div class="resume-degree-org text-muted">{{school.name}}</div>
+                <div class="resume-degree-time text-muted">{{school.start_date}} - {{#if school.end_date}}
+                  {{school.eng_date}} {{else}} present {{/if}}</br></div>
+              </li>
+            </ul>
+            {{/each}}
+          </section>
+        </aside>
     </div>
+  </div>
+  </article>
+
+  </div>
 
   </div>
 
