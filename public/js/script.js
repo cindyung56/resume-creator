@@ -1,19 +1,37 @@
+// VARIABLES
 const addBtn = $("#addExperienceBtn");
 const educationBtn = $("#addEducationBtn");
-const projectsBtn = $('#addProjectsBtn');
+const referencesBtn = $('#addReferencesBtn');
+const skillsBtn = $('#addSkillsBtn');
 const uploadBtn = $(".btn");
+
 const experience = $(".experience");
 const education = $(".education");
-const projects = $(".projects");
-const tempDis1 = $("#temp1");
-const templateC = $('#cindys-template');
+const references = $(".references");
+const skills = $(".skills");
+
 let count = 1;
+const loginButton = $('#loginButton');
+const createButton = $("#createButton");
+let selectedTemplate = null;
+let loggedInUserId = null;
+
+const downloadBtn = $('#downloadBtn');
+const deleteBtn = $('#deleteBtn');
+
+// EVENT LISTENERS
+
+loginButton.on('click', function(){
+  console.log("button pressed");
+  document.location.replace('/login');
+})
+
 
 addBtn.on("click", function () {
-  console.log("it clicks");
+  // console.log("it clicks");
   experience.append(
     $("<div>")
-      .addClass("mb-3")
+      .addClass("mb-3 experienceSection")
       .append(
         $("<label>")
           .attr("for", `experienceText${count}`)
@@ -77,10 +95,10 @@ addBtn.on("click", function () {
 
 
 educationBtn.on("click", function () {
-    console.log("it clicks");
+    // console.log("it clicks");
     education.append(
       $("<div>")
-        .addClass("mb-3")
+        .addClass("mb-3 educationSection")
         .append(
           $("<label>")
             .attr("for", `educationText${count}`)
@@ -135,49 +153,86 @@ educationBtn.on("click", function () {
     count++;
   });
 
-  // projectsBtn.on("click", function () {
-  //   console.log("it clicks");
-  //   projects.append(
-  //     $("<div>")
-  //       .addClass("mb-3")
-  //       .append(
-  //         $("<label>")
-  //           .attr("for", `projectsText${count}`)
-  //           .addClass("form-label")
-  //           .text("Projects")
-  //       )
-  //       .append(
-  //         $("<textarea>")
-  //           .addClass("form-control")
-  //           .attr("rows", "3")
-  //           .attr("id", `projectsText${count}`)
-  //       )
-  //   );
-  //   count++;
-  // });
+referencesBtn.on("click", function () {
+  references.append(
+    $('<div>')
+      .attr("class", "mb-3 referenceSection")
+      .append(
+        $("<h5>").text("Name:")
+      )
+      .append(
+        $("<input>")
+          .attr({
+            class: "form-control form-control-sm referenceName",
+            type: "text",
+            placeholder: "Reference Name",
+            'aria-label': '.form-control-sm example',
+          })
+      )
+      .append($("<h5>").text("Email:"))
+      .append(
+        $("<input>")
+          .attr({
+            class: "form-control form-control-sm referenceEmail",
+            type: "text",
+            placeholder: "Reference Email",
+            'aria-label': '.form-control-sm example',
+          })
+      )
+      .append($("<h5>").text("Phone Number:"))
+      .append(
+        $("<input>")
+          .attr({
+            class: "form-control form-control-sm referencePhone",
+            type: "text",
+            placeholder: "Reference Phone #",
+            'aria-label': '.form-control-sm example',
+          })
+      )
+  )
+});
 
-// this section is my section camille :D
+
+skillsBtn.on('click', function(){
+  skills.append(
+    $("<div>")
+      .addClass("mb-3")
+      .append(
+        $("<input>")
+          .attr({
+            class: "form-control form-control-sm skill",
+            type: "text",
+            placeholder: "Skill",
+            'aria-label': ".form-control-sm example",
+          })
+      )
+  )
+});
+
 
 
 const templateUrls = [
   {
     id: "temp1",
-    url: "images/cy-resume-template.png"
+    url: "images/cy-resume-template.png",
+    layout: "camille"
   },
   {
     id: "temp2",
-    url: "images/sb-resume-template.png"
+    url: "images/sb-resume-template.png",
+    layout: "steven"
   },
   {
     id: "temp3",
-    url: "images/cu-resume-template.jpg"
+    url: "images/cu-resume-template.jpg",
+    layout: "cindy"
   }
 ]
 //grab images-container with queryselector.all 
 // add event listener to the ul 
 // if event . taget = li, then 
 // images-container.filter 
-// if the event . taret . = "id" match then select display
+// if the event . target . = "id" match then select display
 const imagesContainer= $('.images-container')
 
 $('ul').on("click", "button", (e) => {
@@ -185,6 +240,7 @@ $('ul').on("click", "button", (e) => {
     const activeTemplateUrl = templateUrls.filter(template => {
       return template.id === e.target.id
     })
+    selectedTemplate = activeTemplateUrl[0].layout;
     imagesContainer.empty()
     imagesContainer.append($('<img>').attr('src', activeTemplateUrl[0].url 
     ))
@@ -192,3 +248,132 @@ $('ul').on("click", "button", (e) => {
   } 
 )
 
+// create button and send information to the back-end
+createButton.on('click', function (){
+  const resumeObject = {
+    "name": $('#resumeName').val(),
+    "email": $('#resumeEmail').val(),
+    "phone": $('#resumePhone').val(),
+    "linkedin": $('#linkedinLink').val(),
+    "portfolio": $('#portfolioLink').val(),
+    "title": $('#jobTitle').val(),
+  };
+
+
+  let experienceArray = [];
+  for (let i = 0; i < $('.experienceSection').length; i++){
+    const oneExpList = $($('.experienceSection')[i]).children('input');
+
+    const description = $($('.experienceSection')[i]).children('textarea');
+
+    experienceArray.push({
+      "title": $(oneExpList[0]).val(),
+      "company": $(oneExpList[1]).val(),
+      "start_date": $(oneExpList[2]).val(),
+      "end_date": $(oneExpList[3]).val(),
+      "description": description.val(),
+    });
+  }
+
+
+  let educationArray = [];
+  for (let i = 0; i < $('.educationSection').length; i++){
+    const oneEduList = $($('.educationSection')[i]).children('input');
+    educationArray.push({
+      "name": $(oneEduList[0]).val(),
+      "start_date": $(oneEduList[1]).val(),
+      "end_date": $(oneEduList[2]).val(),
+      "degree": $(oneEduList[3]).val(),
+    });
+  }
+
+
+  let referencesArray = [];
+  for (let i = 0; i < $('.referenceSection').length; i++){
+    const oneRefList = $($('.referenceSection')[i]).children('input');
+    referencesArray.push({
+      "name": $(oneRefList[0]).val(),
+      "email": $(oneRefList[1]).val(),
+      "phone": $(oneRefList[2]).val()
+    });
+  }
+
+
+  let skillArray = [];
+  for (let i = 0; i < $('.skill').length; i++){
+    const skillInput = $($('.skill')[i]).val();
+    skillArray.push({"name": skillInput});
+  }
+
+  const body = {
+    resume: resumeObject, 
+    experience: experienceArray, 
+    education: educationArray, 
+    reference: referencesArray, 
+    skill: skillArray,
+  };
+  
+  console.log(body);
+
+  // send fetch or ajax request here
+  // send body to back-end to make new data in database
+  // send body to render in whichever template has been chosen
+  fetch('/api/resume',
+  {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+  })
+  .then((data) => {
+    if(data.ok){
+      document.location.replace(`/resume/${selectedTemplate}`);
+    }
+  })
+  .catch(err => console.log(err))
+  
+});
+
+deleteBtn.on('click', function(){
+  fetch('/api/resume',
+  {
+    method: "DELETE",
+    headers: { 'Content-Type': 'application/json' },
+  })
+  .then((data) => {
+    if (data.ok){
+      document.location.replace('/homepage');
+    }
+  })
+});
+
+downloadBtn.on('click', function(){
+  fetch('/download',
+  {
+    method: "POST",
+    body: JSON.stringify({layout: selectedTemplate}),
+    headers: { 'Content-Type': 'application/json '},
+  })
+});
+
+
+const logout = async () => {
+  const response = await fetch('api/users/logout', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/login');
+  } else {
+    alert('Failed to log out.');
+  }
+};
+
+if(document.location.pathname !== '/login') {
+  document.querySelector('#logoutBtn').addEventListener('click', logout);
+}
+
+// $('#loginButton').on('click', function(){
+//   console.log("button pressed");
+//   document.location.replace('/login');
+// })
