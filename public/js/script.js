@@ -226,6 +226,11 @@ const templateUrls = [
     id: "temp3",
     url: "images/cu-resume-template.jpg",
     layout: "cindy"
+  },
+  {
+    id: "temp4",
+    url: "images/tg-resume-template.png",
+    layout: "todd"
   }
 ]
 //grab images-container with queryselector.all 
