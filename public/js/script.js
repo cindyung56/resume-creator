@@ -341,7 +341,7 @@ deleteBtn.on('click', function(){
   })
   .then((data) => {
     if (data.ok){
-      document.location.replace('/homepage');
+      document.location.replace('/');
     }
   })
 });
