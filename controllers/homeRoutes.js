@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Resume, Experience, Education, Reference, Skill,} = require("../models");
-// may need authentication here?
+const path = require('path');
+const puppeteer = require('puppeteer-core');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
@@ -39,7 +40,6 @@ router.get("/resume/:layout", async (req, res) => {
 });
 
 
-// Create GET request to find information for logged in user
 
 // Create GET request to login if not logged in already; redirect to homepage or profile if not logged in
 // could make it so that we have code that checks if they have an existing resume?
@@ -61,6 +61,19 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+
+router.post('/download', async (req, res) => {
+
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(path.join(__dirname, `/resume/${req.body.layout}`), {
+    waitUntil: 'networkidle2',
+  });
+  await page.pdf({path: 'example.pdf', format: 'a4'});
+
+  await browser.close();
+})
 
 
 module.exports = router;

@@ -9,7 +9,7 @@
 <main>
 <div class="contact-info text-center ">
     <p><span class="mx-3">{{phone}}</span><span class="mx-3">{{email}}</span></p>
-    <p><span class="mx-3">{{linkedin}}</span><span class="mx-3">johndoe.github.io</span></p>
+    <p><span class="mx-3">{{linkedin}}</span><span class="mx-3">{{portfolio}}</span></p>
 </div>
 
 
@@ -17,58 +17,34 @@
     <div class="col-7 ">
         <h4 class="text-white border-bottom border-1 border-dark"><span class="section-title bg-primary px-1">Skills</span></h4>
         <ul>
-            <li>HTML / CSS / JavaScript</li>
-            <li>Java / C# / Python</li>
-            <li>MySQL</li>
-            <li>Node.js / express </li>
+            {{#each skills as |skill|}}
+                <li>{{skill.name}}</li>
+            {{/each}}
         </ul>
     </div>
+
+    {{#each education as |school|}}
     <div class="col-5 border-start border-1 border-dark">
         <h4 class="text-white border-bottom border-1 border-dark"><span class="section-title bg-primary px-1">Education</span></h4>
-        <p><span class="work-title">University of California, LA</span><br>Sep 2010 - Jun 2014<br>Bachelor's Degree in Computer Science</p>
+        <p><span class="work-title">{{school.name}}</span><br>{{school.start_date}} - {{#if school.end_date}} {{school.end_date}} {{else}} present {{/if}}<br>{{school.degree}}</p>
     </div>
+    {{/each}}
+
 </section>
 
 <section class="row">
     <div class="col-12">
         <h4 class="text-white border-bottom border-1 border-dark"><span class="section-title bg-primary px-1">Professional Experience</span></h4>
         
+        {{#each experiences as |job|}}
         <div class="row">
-            <div class="col-4">Jul 2020 - present</div>
+            <div class="col-4">{{job.start_date}} - {{#if job.end_date}} {{job.end_date}} {{else}} present {{/if}}</div>
             <div class="col-8 border-start border-1 border-dark">
-                <span class="work-title">Lead Software Engineer</span> | Google, Mountain View, CA
-                <ul>
-                    <li>Manage team of junior and senior software engineers to solve problems and develop applications.</li>
-                    <li>Use a variety of coding languages to create algorithms, data structures, and databases.</li>
-                    <li>Hold weekly meetings to keep track of team progress and increase team morale.</li>
-                </ul>
+                <span class="work-title">{{job.title}}</span> | {{job.company}}
+                <p>{{job.description}}</p>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-4">Feb 2018 - Jul 2020</div>
-            <div class="col-8 border-start border-1 border-dark">
-                <span class="work-title">Senior Software Engineer</span> | Microsoft, Bellevue, WA
-                <ul>
-                    <li>Redesigned and edited applications to improve users' experience.</li>
-                    <li>Worked with teams to create dynamic programs.</li>
-                    <li>Created full-stack applications using C#, MySQL, and Node.js.</li>
-                    <li>Coached and trained new interns and employees.</li> 
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4">Jul 2014 - Feb 2018</div>
-            <div class="col-8 border-start border-1 border-dark">
-                <span class="work-title">Associate Software Engineer</span> | Cisco, Irvine, CA
-                <ul>
-                    <li>Worked together with fellow developers to make responsive and dynamic applications.</li>
-                    <li>Worked with senior developers and designers to develop new products for the company.</li>
-                    <li>Created full-stack applications for users.</li> 
-                </ul>
-            </div>
-        </div>
+        {{/each}}
     </div>
 </section>
 
@@ -76,11 +52,12 @@
     <div class="col-12">
         <h4 class="text-white border-bottom border-1 border-dark"><span class="section-title bg-primary px-1">References</span></h4>
         <ul>
-            <li><span class="work-title">Mary Smith</span> <span class="mx-3">|</span> marysmith05@fakemail.com <span class="mx-3">|</span> (909) 123-4567</li>
-            <li><span class="work-title">Justin Brown</span> <span class="mx-3">|</span> jbrown1@fakemail.com <span class="mx-3">|</span> (300) 330-2222</li>
-            <li><span class="work-title">Mark Nguyen</span> <span class="mx-3">|</span> marknguyen@fakemail.com <span class="mx-3">|</span> (800) 454-4545</li>
+            {{#each references as |reference|}}
+                <li><span class="work-title">{{reference.name}}</span> <span class="mx-3">|</span> {{reference.email}} <span class="mx-3">|</span> {{reference.phone}}</li>
+            {{/each}}
         </ul>
     </div>
 </section>
 
 </main>
+
