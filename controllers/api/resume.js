@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User, Resume, Experience, Education, Reference, Skill } = require('../../models');
 
 // POST (create) new Resume based on body; use the other models to store information
-// for now assume the body is an object that separates all the information for the models; everything except the resume will be an array of objects
 router.post('/', async(req, res) => {
     try{
      const resumeData = await Resume.create({
@@ -101,6 +100,8 @@ router.delete('/', async (req, res) => {
     }
 
 });
+
+
 
 
 module.exports = router;

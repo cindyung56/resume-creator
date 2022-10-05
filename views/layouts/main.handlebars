@@ -42,6 +42,21 @@
             {{{ body }}}
         </main>
     </div>
+
+    {{#if cindy}}
+        <button class="bg-primary text-white p-1" id="downloadBtn">Download as PDF</button>
+        <button class="bg-primary text-white p-1" id="deleteBtn">Delete Result</button>
+    {{else if steven}}
+        <button class="bg-primary text-white p-1" id="downloadBtn">Download as PDF</button>
+        <button class="bg-primary text-white p-1" id="deleteBtn">Delete Result</button>
+    {{else if camille}}
+        <button class="bg-primary text-white p-1" id="downloadBtn">Download as PDF</button>
+        <button class="bg-primary text-white p-1" id="deleteBtn">Delete Result</button>
+    {{else if todd}}
+        <button class="bg-primary text-white p-1" id="downloadBtn">Download as PDF</button>
+        <button class="bg-primary text-white p-1" id="deleteBtn">Delete Result</button>
+    {{/if}}
+
     <footer class="bg-light w-100 py-3 position-aboslute bottom-0 start-50 trasnlate-middle-x">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: darkblue;">

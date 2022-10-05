@@ -16,6 +16,9 @@ const createButton = $("#createButton");
 let selectedTemplate = null;
 let loggedInUserId = null;
 
+const downloadBtn = $('#downloadBtn');
+const deleteBtn = $('#deleteBtn');
+
 // EVENT LISTENERS
 
 loginButton.on('click', function(){
@@ -330,7 +333,27 @@ createButton.on('click', function (){
   
 });
 
+deleteBtn.on('click', function(){
+  fetch('/api/resume',
+  {
+    method: "DELETE",
+    headers: { 'Content-Type': 'application/json' },
+  })
+  .then((data) => {
+    if (data.ok){
+      document.location.replace('/homepage');
+    }
+  })
+});
 
+downloadBtn.on('click', function(){
+  fetch('/download',
+  {
+    method: "POST",
+    body: JSON.stringify({layout: selectedTemplate}),
+    headers: { 'Content-Type': 'application/json '},
+  })
+});
 
 
 const logout = async () => {
