@@ -346,14 +346,14 @@ deleteBtn.on('click', function(){
   })
 });
 
-downloadBtn.on('click', function(){
-  fetch('/download',
-  {
-    method: "POST",
-    body: JSON.stringify({layout: selectedTemplate}),
-    headers: { 'Content-Type': 'application/json '},
-  })
-});
+// downloadBtn.on('click', function(){
+//   fetch('/download',
+//   {
+//     method: "POST",
+//     body: JSON.stringify({layout: selectedTemplate}),
+//     headers: { 'Content-Type': 'application/json '},
+//   })
+// });
 
 
 const logout = async () => {
