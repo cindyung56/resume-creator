@@ -13,11 +13,11 @@
 <body>
     <header>
     <div class="header">
-        <header class="name">INSERT NAME HERE</header>
+        <header class="name">{{name}}</header>
     </div>
 
     <div id="jobTitle" class="job-title">
-        <h4 class="job">JOB TITLE</h4>
+        <h4 class="job">{{title}}</h4>
     </div>
     </header>
 
@@ -27,35 +27,46 @@
           <div class="col-12" id="leftside">
             <h5>Contact</h5>
             <ul class="contact-list">
-                <li class="phone"><i class="fa-solid fa-phone"></i> 555-555-5555</li>
-                <li><i class="fa-solid fa-envelope"></i> INSERT EMAIL</li>
-                <li><i class="fa-solid fa-globe"><a class="link" href="ADDLINKEDINURL"> LINKEDIN</a></i></li>
+                <li><i class="fa-solid fa-phone"></i> {{phone}}</li>
+                <li><i class="fa-solid fa-envelope"></i> {{email}}</li>
+                <li><i class="fa-solid fa-globe"><a class="link" href="{{linkedin}}"> LinkedIn</a></i></li>
+                <li><i class="fa-sharp fa-solid fa-window"><a class="link" href="{{portfolio}}"> Portfolio</a></i></li>
             </ul>
             <h5>Eduction</h5>
-            <p class="date">Start Date - End Date</p>
-            <p class="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque veniam temporibus rem doloribus odio, aperiam ut sit praesentium explicabo quibusdam quod fugiat ea aut rerum quia ipsum amet illum incidunt.</p>
+            <ul>
+            {{#each education as |school|}}
+            <li class="school-name">{{school.name}}</li>
+            <li class="date">{{school.start_date}} - {{school.end_date}}</li>
+            <li class="degree">{{school.degree}}</li>
+            {{/each}}
+            </ul>
             <h5>Key Skills</h5>
             <ul>
-                <li>INSERT SKILLS</li>
-                <li>INSERT SKILLS</li>
-                <li>INSERT SKILLS</li>
-                <li>INSERT SKILLS</li>
-                <li>INSERT SKILLS</li>
-                <li>INSERT SKILLS</li>
+                {{#each skills as |skill|}}
+                <li>{{skill.name}}</li>
+                {{/each}}
             </ul>
         </div>
     </div>
 
      <div class="col-12 col-md-8">
+        {{#each experiences as |job|}}
         <div class="experience">
             <h5 class="user-experience">Experience</h5>
-            <p class="date">Start Date - End Date</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusamus quidem fugiat praesentium porro. Modi facere dolores accusamus provident? Voluptatem quibusdam sequi ad deleniti a quae quod incidunt, accusamus ut.</p>
+            <ul>
+            <li class="date">{{job.start_date}} - {{#if job.end_date}} {{job.end_date}} {{else}} present {{/if}}</li>
+            <li class="work-job">{{job.title}}</li>
+            <li class="job-company">{{job.company}}</li>
+            </ul>
+            <p>{{job.description}}</p>
         </div>
+        {{/each}}
     
+        {{#each references as |reference|}}
         <div class="reference">
             <h5 class="job-reference">References</h5>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident adipisci excepturi, aliquid vitae harum quisquam rerum esse similique deleniti repellendus consequatur autem! Nemo et, molestias eaque velit hic accusantium harum?</p>
+        {{/each}}
         </div>
     </div>
 </div>
