@@ -63,26 +63,6 @@ router.post('/logout', (req, res) => {
   });
 
 
-// router.post('/download', async (req, res) => {
-
-//   const browser = await puppeteer.launch();
-//   const page = await browser.newPage();
-//   await page.goto(path.join(__dirname, `/resume/${req.body.layout}`), {
-//     waitUntil: 'networkidle2',
-//   });
-//   await page.pdf({path: 'example.pdf', format: 'a4'});
-
-//   await browser.close();
-// })
-//   async function start() {
-//   const browser = await puppeteer.launch()
-//   const page = await browser.newPage()
-//   await page.goto(path.join(__dirname, `/resume/${req.body.layout}`))
-//   await page.screenshot({path: 'example.pdf', fullPage: true})
-//   await browser.close()
-//   }
-// start();
-
 
 
 
