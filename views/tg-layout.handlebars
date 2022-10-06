@@ -1,202 +1,84 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>New Resume</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,300,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="css/tg-style.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Resume</title> 
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/tg-style.css">
 
-  </head>
+</head>
 
-  <body class="container-fluid">
+<body class="container-fluid">
+ 
+    <header class='text-left secondary'>
+      <div class="text-bg-secondary p-3 fs-1">{{name}}<br>{{title}}</div>
+      </header>
 
-    <header class="">
-      <div class="text-bg-secondary= p-3 fs-1">Todd</div>
+   <div class="contact-info">
+  <span class=""> Email:</span>
+  <span class="email-val">{{email}}</span>
+  <span class="separator"></span> |
+  <span class="phone">Phone: </span> 
+  <span class="phone-val">{{phone}}</span>
+  <span class="separator"></span> |
+  <span class="contact">{{linkedin}}</span> |
+  <span class="contact">{{portfolio}}</span></p>
+  </div>
+
+  <header class='text-left secondary'>
+    <div class="text-bg-secondary p-3 fs-4">Skills</div>
     </header>
 
-    <div class="">
-      <span class=""> Email:</span>
-      <span class="email-val">johndoe@gmail.com</span>
-      <span class="separator"></span>
-      |
-      <span class="phone">Phone: </span>
-      <span class="phone-val">818-422-1158</span>
-      <span class="separator"></span>
-      |
-      <span class="contact">linkedin.com/johndoe</span>
-      |
-      <span class="contact">johndoe.github.io</span>
-    </div>
-
-    <div>
-      <h3 class="">Front-End Developer</h3>
-      <p></p>
-    </div>
-
-    <div>
-      <h5 class="">QUALIFICATIONS</h5>
+     <div class="">
       <ul>
-        <li>More than 15 years in managerial and administrative experience
-          supervising a staff of 25 employees</li>
-        <li>Excellent ability to adapt to any work environment with versatility</li>
-        <li>Dedication and drive as a hard-working individual. Committed to
-          being timely and punctual, arriving early and staying late</li>
-      </ul>
+            <ul>
+            {{#each skills as |skill|}}
+                <li>{{skill.name}}</li>
+            {{/each}}
+        </ul>
     </div>
+  </div>
 
-    <div class="">
-      <h5 class="">INTERPERSONAL AND TEAMWORK SKILLS</h5>
-      <ul>
-        <li>Entrusted to process confidential employee records such as salary
-          changes, vacation/absenteeism reports and performance appraisals</li>
-        <li>Interacted productively with a wide variety of personalities while
-          scheduling meetings and appointments</li>
-        <li>Outstanding communication and team-building skills</li>
-        <li>Maintained great working relationships with staff and employers over
-          an 11-year work history</li>
-      </ul>
+
+ {{#each experiences as |job|}}
+  <header class='text-left secondary'>
+        <div class="text-bg-secondary p-3 fs-4">Work Experience</div>
+    </header>        
+        <div class="row">
+            <div class="col-5 text-black">{{job.start_date}} - {{#if job.end_date}} {{job.end_date}} {{else}} present {{/if}}</div>
+            <div class="col-7 text-black">
+                <span class="work-title">{{job.title}}</span> | {{job.company}}
+                <p>{{job.description}}</p>
+            </div>
+        </div>
+        {{/each}}
     </div>
-
-    <header class="text-left secondary">
-      <div class="text-bg-secondary p-3 fs-4">Employment History</div>
-    </header>
-
+</section>
+     
+<section>
+   {{#each education as |school|}}
+<header class='text-left secondary'>
+  <div class="text-bg-secondary p-3 fs-4">Education</div>
+  </header>
   
+  <p><span class="work-title">{{school.name}}</span><br>{{school.start_date}} - {{#if school.end_date}} {{else}} present {{/if}}<br>{{school.degree}}</p>
+  </div>
+  {{/each}}
+</section>
 
-    <section class="row">
-      <div class="col">
-        <h5 class="text-black">California Credit Union</h5>
-               <p><span class="bold work-title"></span>Dec 1998 - Mar
-          2009<br />
-          <span class="">Los Angeles, CA</span></p>
-      </div>
-
-      <div class="col-5">
-        <h5 class="container-fluid text-black"><span class="">Call Center
-            Manager</span></h5>
-        <ul>
-          <li>Hire, onboard and train call center personnel</li>
-          <li>Coach call center staff through challenging customer service
-            issues</li>
-          <li>Analyze call center data and prepare reports for upper managemen</li>
-          <li>Evaluate staff effectiveness and performance annually or on an
-            at-need basis</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-7">
-        <h5 class="text-black">FedEx</h5>
-        <p><span class="bold work-title"></span>May 2010 - Dec
-          2010<br />
-          <span class="">Los Angeles, CA</span></p>
-      </div>
-
-      <div class="col-5">
-        <h5 class="text-black"><span class="">Lead Project
-            Coordinator</span></h5>
-        <ul>
-          <li>Hire, onboard and train call center personnel</li>
-          <li>Coach call center staff through challenging customer service
-            issues</li>
-          <li>Analyze call center data and prepare reports for upper managemen</li>
-          <li>Evaluate staff effectiveness and performance annually or on an
-            at-need basis</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-7">
-        <h5 class="text-black">Bank of America</h5>
-        <p><span class="container- fluid bold work-title"></span>Dec 2010 - Apr
-          2013<br />
-          <span class="">Los Angeles, CA</span></p>
-      </div>
-
-      <div class="col-5">
-        <h5 class="text-black"><span class="">Personal Banker</span></h5>
-        <ul>
-          <li>Hire, onboard and train call center personnel</li>
-          <li>Coach call center staff through challenging customer service
-            issues</li>
-          <li>Analyze call center data and prepare reports for upper managemen</li>
-          <li>Evaluate staff effectiveness and performance annually or on an
-            at-need basis</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="row">
-      <section class="row">
-      <div class="col">
-        <h5 class="text-black">Bank of America</h5>
-               <p><span class="bold work-title"></span>Apr 2013 - Feb
-          2015<br />
-          <span class="">Los Angeles, CA</span></p>
-      </div>
-
-
-      <div class="col-5">
-        <h5 class="text-black"><span class="">Mortgage Loan
-            Officer</span></h5>
-        <ul>
-          <li>Hire, onboard and train call center personnel</li>
-          <li>Coach call center staff through challenging customer service
-            issues</li>
-          <li>Analyze call center data and prepare reports for upper managemen</li>
-          <li>Evaluate staff effectiveness and performance annually or on an
-            at-need basis</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-7">
-        <h5 class="text-black"><span
-            class="container-fluid section-title px-1"
-          >Bossa Nova</span></h5>
-        <p><span class="bold work-title"></span>Apr 2015 Apri
-          2021<br />
-          <span class="">Los Angeles, CA</span></p>
-      </div>
-
-      <div class="col-5">
-        <h5 class="text-black"><span class="">Catering Manger</span></h5>
-        <ul>
-          <li>Hire, onboard and train call center personnel</li>
-          <li>Coach call center staff through challenging customer service
-            issues</li>
-          <li>Analyze call center data and prepare reports for upper managemen</li>
-          <li>Evaluate staff effectiveness and performance annually or on an
-            at-need basis</li>
-        </ul>
-      </div>
-    </section>
-
-    <header class="text-left secondary">
-      <div class="text-bg-secondary p-3 fs-4">Computer skills</div>
+<section>
+  <header class='text-left secondary'>
+    <div class="text-bg-secondary p-3 fs-4">Reference</div>
     </header>
-    <p>Proficient in JavaScript, HTML, Express, Node.js, MYSQL, Microsoft Word,
-      creating and distributing reports in Excel, Power Point, Adobe Illustrator</p>
-
-  </body>
+    <ul>
+    {{#each references as |reference|}}
+                <li><span class="work-title">{{reference.name}}</span> <span class="mx-3">|</span> {{reference.email}} <span class="mx-3">|</span> {{reference.phone}}</li>
+            {{/each}}
+  </ul>
+    </div>
+  </section>
+</body>
 </html>
