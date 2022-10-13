@@ -29,6 +29,12 @@ Heroku
   </tr>
 </table>
 
+## Deploy Link
+(https://fierce-ravine-29010.herokuapp.com/)
+
+## GitHub Link
+(https://github.com/cindyung56/resume-creator)
+
 ## License
 MIT License
 
